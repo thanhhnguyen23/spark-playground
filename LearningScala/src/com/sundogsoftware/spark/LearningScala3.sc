@@ -9,14 +9,14 @@ object LearningScala3 {
   def squareIt(x: Int): Int = {
     // no return is needed because expressions are automatically evaluated
     x * x
-  }                                               //> squareIt: (x: Int)Int
+  }
 
   def cubeIt(x: Int): Int = {
     x * x * x
-  }                                               //> cubeIt: (x: Int)Int
+  }
 
-  println(squareIt(5))                            //> 25
-  println(cubeIt(2))                              //> 8
+  println(squareIt(5))
+  println(cubeIt(2))
 
 
 
@@ -29,16 +29,19 @@ object LearningScala3 {
 	def transformInt(x: Int, f: Int => Int) : Int = {
 
 		f(x)
-	}                                         //> transformInt: (x: Int, f: Int => Int)Int
+	}
 	// example 1
-	val result = transformInt(2, cubeIt)      //> result  : Int = 8
-	println(result)                           //> 8
+	val result = transformInt(2, cubeIt)
+	println(result)
 	
 	// example 2
 	val anotherResult = transformInt(2, squareIt)
-                                                  //> anotherResult  : Int = 4
-	println(anotherResult)                    //> 4
+	println(anotherResult)
+	
+	
+	// "lambda functions", "anonymous functions", "function literals"
+
+	transformInt(3, x => x * x * x)
 	
 
-	
 }
