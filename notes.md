@@ -306,3 +306,63 @@ wordCounts.collect()
 
 
 
+# RDD
+* resilient distributed dataset
+## spark context
+* responsible for making RDDs resilient and distributed
+* creates RDD
+* spark shell creates a "sc" object for you
+
+## example
+```
+val nums = parallelize(List(1,2,3,4,5))
+sc.textFile("/some/path/to/some/text/file.txt")
+
+```
+
+## transforming RDDs
+* map
+* flatmap
+* filter
+* distinct
+* sample
+* union, intersection, subtract, cartesian
+
+
+
+## map example
+```
+val rdd = sc.parallelize(List(1,2,3,4)
+val squares = rdd.map(x => x * x)
+
+```
+
+### functional programming examle
+```
+// example 1
+rdd.map(x => x * x)
+
+// example 2
+def squareIt(x: Int): Int = {
+    return x * x
+}
+rdd.map(squareIt)
+```
+
+## RDD actions
+* collect
+* count
+* countByValue
+* take - peek the first 10 lines of a dataset
+* top
+* reduce
+
+## spark internals
+* textFile()
+* mape()
+* countByValue() (RDD action)
+
+## key/value RDDs
+
+
+
