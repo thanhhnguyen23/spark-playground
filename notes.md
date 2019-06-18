@@ -400,3 +400,7 @@ for(result <- results.sorted){
     - for operations such as reading/creating Datasets, use the SparkSession object
 
 
+
+
+## map vs flatmap
+
