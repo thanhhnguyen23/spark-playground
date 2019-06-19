@@ -31,6 +31,5 @@ object WordCountBetter {
     // Print the results
     wordCounts.foreach(println)
   }
-  
 }
 
