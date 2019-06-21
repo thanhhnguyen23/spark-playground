@@ -36,8 +36,13 @@ object PurchaseByCustomerSorted {
 
     val totalsByCustomerId = rdd.reduceByKey( (x, y) => x + y )
 
-    // sorting amount column
-    val totalsByCustomerIdSorted = totalsByCustomerId.map( x => (x._2, x._1) ).sortByKey()
+    /*
+     * sorted amount column by ascending order 
+     * val totalsByCustomerIdSorted = totalsByCustomerId.map( x => (x._2, x._1) ).sortByKey()
+     */
+
+    // sorted amount column by decending order
+    val totalsByCustomerIdSorted = totalsByCustomerId.map( x => (x._2, x._1) ).sortByKey(false)
 
     val result = totalsByCustomerIdSorted.collect()
     
